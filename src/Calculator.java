@@ -13,14 +13,24 @@ public class Calculator {
     }
 
     public double divide(int a, int b) {
+        if (b == 0) {
+            System.err.println("Error: Division by zero is not allowed.");
+            return 0;
+        }
         return (double) a / b;
+    }
+
+    public int modulo(int a, int b) {
+        return a % b;
     }
 
     public static void main(String[] args) {
         Calculator calc = new Calculator();
-        System.out.println("Addition: " + calc.add(10, 5));
-        System.out.println("Subtraction: " + calc.subtract(10, 5));
-        System.out.println("Multiplication: " + calc.multiply(10, 5));
-        System.out.println("Division: " + calc.divide(10, 5));
+        System.out.println("--- Main Branch Calculator ---");
+        System.out.println("Add: " + calc.add(10, 5));
+        System.out.println("Subtract: " + calc.subtract(10, 5));
+        System.out.println("Multiply: " + calc.multiply(10, 5));
+        System.out.println("Divide: " + calc.divide(10, 5));
+        System.out.println("Modulo: " + calc.modulo(10, 5));
     }
 }
