@@ -13,14 +13,23 @@ public class Calculator {
     }
 
     public double divide(int a, int b) {
+        if (b == 0) {
+            throw new IllegalArgumentException("Cannot divide by zero");
+        }
         return (double) a / b;
+    }
+
+    public double power(int base, int exponent) {
+        return Math.pow(base, exponent);
     }
 
     public static void main(String[] args) {
         Calculator calc = new Calculator();
-        System.out.println("Addition: " + calc.add(10, 5));
-        System.out.println("Subtraction: " + calc.subtract(10, 5));
-        System.out.println("Multiplication: " + calc.multiply(10, 5));
-        System.out.println("Division: " + calc.divide(10, 5));
+        System.out.println("=== Feature Branch Calculator ===");
+        System.out.println("10 + 5 = " + calc.add(10, 5));
+        System.out.println("10 - 5 = " + calc.subtract(10, 5));
+        System.out.println("10 * 5 = " + calc.multiply(10, 5));
+        System.out.println("10 / 5 = " + calc.divide(10, 5));
+        System.out.println("10 ^ 5 = " + calc.power(10, 5));
     }
 }
